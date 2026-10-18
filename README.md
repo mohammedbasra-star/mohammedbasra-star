@@ -55,18 +55,19 @@ flowchart LR
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/pinn-reservoir-dynamics/blob/main/notebooks/quickstart_reservoir_demo.ipynb)
 
 ### 3. [turbomachinery-rotor-dynamics-ode-](https://github.com/mohammedbasra-star/turbomachinery-rotor-dynamics-ode-)
-**Dynamical Systems Modeling, 2-DOF Jeffcott Rotor Vibration & PyTorch Neural ODEs**
-- Mathematical modeling of rotor lateral vibration with mass unbalance and bearing damping: $m \ddot{x} + c \dot{x} + k x = m e \omega^2 \cos(\omega t)$.
-- Classical Runge-Kutta (RK45) simulator vs differentiable Neural ODE solver.
-- Campbell / Bode frequency response and Campbell resonance peak ($500.0\mu\text{m}$ at $954.9\text{ RPM}$).
-- System identification of bearing damping ($c$) and unbalance eccentricity ($e$) directly from vibration telemetry.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-rotor-dynamics-ode-/blob/main/notebooks/rotor_dynamics_demo.ipynb)
+**Dynamical Systems Modeling, 2-DOF Jeffcott Rotor with Duffing Stiffness, Capone Bearing Forces & Neural ODEs**
+- High-fidelity formulation: 2-DOF rotor motion with nonlinear cubic Duffing stiffness and Capone hydrodynamic short-bearing Reynolds lubrication oil-film forces ($M \ddot{r} + C \dot{r} + K r + F_{\text{nl}}(r) = F_{\text{unbalance}}(t)$).
+- Classical 4th/5th-order Runge-Kutta (SciPy RK45) ground truth vs continuous-time Neural ODE vs Collocation PINN baseline.
+- Spectral analysis (FFT) tracking 1X synchronous unbalance ($50.0\text{ Hz}$ at $3000\text{ RPM}$) and subharmonic hydrodynamic oil whirl ($\sim 0.46\text{X}$).
+- System identification discovering unbalance eccentricity ($e$) and bearing damping ($c$) from vibration orbits.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-rotor-dynamics-ode-/blob/main/notebooks/quickstart_demo.ipynb)
 
 ### 4. [turbomachinery-degradation-lstm-](https://github.com/mohammedbasra-star/turbomachinery-degradation-lstm-)
-**Deep Temporal Prognostics & Remaining Useful Life (RUL) Forecasting on NASA C-MAPSS**
-- Continuous wear tracking for 100 aircraft turbofan engines using 14 degradation-sensitive sensor channels.
-- Optimized using the official **NASA Asymmetric Scoring Function** penalizing delayed maintenance.
-- Bidirectional LSTM achieved **$10.28\text{ cycles}$ Test RMSE** and minimal industrial risk ($S = 164.9$).
+**Deep Temporal Prognostics & Remaining Useful Life (RUL) on NASA C-MAPSS (BiLSTM + Temporal Attention)**
+- Continuous degradation tracking across 100 aircraft turbofan engines with piecewise-linear RUL clipping ($RUL_{\max} = 125$).
+- Bidirectional LSTM with Multi-Head Temporal Self-Attention and robust Huber loss for early degradation anomaly detection.
+- Achieved test benchmark of **$\text{RMSE} = 9.76\text{ cycles}$** and **NASA Score $S = 158.0$**, significantly outperforming standard regressors.
+- Explainability heatmaps visualizing temporal attention weights across operational sensor sequences.
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-degradation-lstm-/blob/main/notebooks/rul_quickstart_demo.ipynb)
 
 ### 5. [gas-turbine-ambient-effects-regression-](https://github.com/mohammedbasra-star/gas-turbine-ambient-effects-regression-)
@@ -85,9 +86,9 @@ flowchart LR
 | Domain | Core Frameworks & Libraries |
 |:---|:---|
 | **Scientific Machine Learning (SciML)** | `PyTorch 2.x`, `Physics-Informed Neural Networks (PINNs)`, `Neural ODEs`, `Autograd` |
-| **Statistical ML & Prognostics** | `Scikit-Learn`, `XGBoost`, `Pandas`, `NumPy`, `Bidirectional LSTM`, `1D-CNN` |
+| **Statistical ML & Prognostics** | `Scikit-Learn`, `XGBoost`, `Pandas`, `NumPy`, `Bidirectional LSTM`, `Temporal Attention` |
 | **Numerical Methods & Simulation** | `SciPy (solve_ivp, RK45)`, `Finite Difference Methods (Upwind, Crank-Nicolson)` |
-| **Thermodynamics & Turbomachinery** | Brayton Cycle Derating, Rotordynamics (Jeffcott Model), NASA C-MAPSS, Heat Conduction |
+| **Thermodynamics & Turbomachinery** | Brayton Cycle Derating, Jeffcott Rotordynamics, Hydrodynamic Bearings, NASA C-MAPSS |
 | **Data Visualization & Publishing** | `Matplotlib`, `Seaborn`, `Publication 300 DPI Graphics`, `LaTeX (KaTeX)` |
 
 </div>
@@ -104,8 +105,8 @@ flowchart LR
 ├──────────────────────────────────────┼──────────────────────┼──────────────────────────┤
 │  pinn-thermo-dynamics                │  L2 Error = 1.15e-4  │  Analytical 256x256 Grid │
 │  pinn-reservoir-dynamics             │  L2 Error = 4.21e-3  │  Upwind FDM Shock Front  │
-│  turbomachinery-rotor-dynamics-ode   │  Peak Res = 500.0 um │  RK45 Numerical Solver   │
-│  turbomachinery-degradation-lstm     │  Test RMSE = 10.28 cy│  NASA C-MAPSS Fleet (100)│
+│  turbomachinery-rotor-dynamics-ode   │  MSE Loss = 5.50e-10 │  RK45 Numerical Solver   │
+│  turbomachinery-degradation-lstm     │  Test RMSE = 9.76 cy │  NASA C-MAPSS Fleet (100)│
 │  gas-turbine-ambient-effects-regression│ R² Score = 0.9610   │  UCI CCPP (9,568 Points) │
 └──────────────────────────────────────┴──────────────────────┴──────────────────────────┘
 ```
