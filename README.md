@@ -54,27 +54,27 @@ flowchart LR
 - Inverse reservoir history matching for physical porosity discovery ($\phi \to 0.20$).
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/pinn-reservoir-dynamics/blob/main/notebooks/quickstart_reservoir_demo.ipynb)
 
-### 3. [turbomachinery-rotor-dynamics-ode](https://github.com/mohammedbasra-star/turbomachinery-rotor-dynamics-ode)
+### 3. [turbomachinery-rotor-dynamics-ode-](https://github.com/mohammedbasra-star/turbomachinery-rotor-dynamics-ode-)
 **Dynamical Systems Modeling, 2-DOF Jeffcott Rotor Vibration & PyTorch Neural ODEs**
 - Mathematical modeling of rotor lateral vibration with mass unbalance and bearing damping: $m \ddot{x} + c \dot{x} + k x = m e \omega^2 \cos(\omega t)$.
 - Classical Runge-Kutta (RK45) simulator vs differentiable Neural ODE solver.
 - Campbell / Bode frequency response and Campbell resonance peak ($500.0\mu\text{m}$ at $954.9\text{ RPM}$).
 - System identification of bearing damping ($c$) and unbalance eccentricity ($e$) directly from vibration telemetry.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-rotor-dynamics-ode/blob/main/notebooks/rotor_dynamics_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-rotor-dynamics-ode-/blob/main/notebooks/rotor_dynamics_demo.ipynb)
 
-### 4. [turbomachinery-degradation-lstm](https://github.com/mohammedbasra-star/turbomachinery-degradation-lstm)
+### 4. [turbomachinery-degradation-lstm-](https://github.com/mohammedbasra-star/turbomachinery-degradation-lstm-)
 **Deep Temporal Prognostics & Remaining Useful Life (RUL) Forecasting on NASA C-MAPSS**
 - Continuous wear tracking for 100 aircraft turbofan engines using 14 degradation-sensitive sensor channels.
 - Optimized using the official **NASA Asymmetric Scoring Function** penalizing delayed maintenance.
 - Bidirectional LSTM achieved **$10.28\text{ cycles}$ Test RMSE** and minimal industrial risk ($S = 164.9$).
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-degradation-lstm/blob/main/notebooks/rul_quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbomachinery-degradation-lstm-/blob/main/notebooks/rul_quickstart_demo.ipynb)
 
-### 5. [gas-turbine-ambient-effects-regression](https://github.com/mohammedbasra-star/gas-turbine-ambient-effects-regression)
+### 5. [gas-turbine-ambient-effects-regression-](https://github.com/mohammedbasra-star/gas-turbine-ambient-effects-regression-)
 **Machine Learning Benchmark for Gas Turbine Power Derating Under Ambient Climatic Effects**
 - Brayton cycle thermodynamic derating analysis ($T_{amb}, P_{amb}, RH, V$) based on compressor air density loss ($\dot{m} = \rho A v$).
 - Benchmark suite of 5 models trained on 9,568 full-load hourly observations (UCI CCPP).
 - Tuned XGBoost achieved **$R^2 = 0.9610$** and **$\text{RMSE} = 3.364\text{ MW}$** ($0.56\%$ MAPE).
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-ambient-effects-regression/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-ambient-effects-regression-/blob/main/notebooks/quickstart_demo.ipynb)
 
 ---
 
