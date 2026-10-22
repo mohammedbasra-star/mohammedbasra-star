@@ -31,15 +31,17 @@ flowchart TD
     S2["<b>Stage 2: Deep Time-Series</b><br/>Turbomachinery Degradation & RUL<br/><i>(Bi-LSTM + Attention / C-MAPSS)</i>"]
     S3["<b>Stage 3: Dynamical Systems</b><br/>Rotor Dynamics & Bearing Instability<br/><i>(SciPy RK45 / Neural ODE)</i>"]
     
-    subgraph CAP ["<b>Physics-Informed Deep Learning (PINNs & Operator Learning)</b>"]
+    subgraph CAP ["<b>Physics-Informed Deep Learning & Operator Learning (PINNs / FNO)</b>"]
         CAP1["<b>Thermal PINN</b><br/>2D High-Temp Conduction<br/><i>(Analytical & FDM Benchmark)</i>"]
         CAP2["<b>Reservoir PINN</b><br/>Buckley-Leverett Two-Phase Flow<br/><i>(Welge Shock Waves & Inversion)</i>"]
         CAP3["<b>Aerodynamics FNO</b><br/>Turbine Blade Transonic Flow<br/><i>(Continuous Operator Learning)</i>"]
         CAP4["<b>Combustion Neural ODE</b><br/>Stiff Chemical Kinetics & NOx<br/><i>(Arrhenius & Radau / BDF)</i>"]
         CAP5["<b>Conjugate Heat Transfer XPINN</b><br/>Blade Cooling & Multi-Domain CHT<br/><i>(Dual Subnet / Interface Jump)</i>"]
+        CAP6["<b>Pump Cavitation FNO</b><br/>Rayleigh-Plesset Bubble Inception<br/><i>(Multiphase Spectral Operator)</i>"]
+        CAP7["<b>Thermoacoustic PINN</b><br/>Combustion Humming & Rayleigh Criterion<br/><i>(Complex Helmholtz Eigenmodes)</i>"]
     end
 
-    S1 --> S2 --> S3 --> CAP1 & CAP2 & CAP3 & CAP4 & CAP5
+    S1 --> S2 --> S3 --> CAP1 & CAP2 & CAP3 & CAP4 & CAP5 & CAP6 & CAP7
 ```
 
 ---
@@ -125,6 +127,20 @@ flowchart TD
 - Optimizes automated water-free robotic dry-cleaning schedule, recovering $+\$1.85\text{ Million}$ annually per 100 MW block.
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-desert-solar-pv-dust-thermal-ml--/blob/main/notebooks/quickstart_demo.ipynb)
 
+### 12. [centrifugal-pump-cavitation-fno](https://github.com/mohammedbasra-star/centrifugal-pump-cavitation-fno)
+**Cavitation Inception & Rayleigh-Plesset Bubble Dynamics in Centrifugal Pumps using 2D Fourier Neural Operators**
+- Non-equilibrium vapor bubble explosive growth and collapse shockwaves governed by the generalized Rayleigh-Plesset ODE.
+- Euler turbomachinery head, Wiesner slip factor, and Net Positive Suction Head Available vs Required ($\text{NPSH}_A \le \text{NPSH}_{3\%}$) 3% head breakdown.
+- 2D Fourier Neural Operator (`FNO2d`) mapping impeller conformal geometry and flow coefficient to 2D static pressure and vapor volume fraction $\alpha_v(x, y)$ ($15,000\times$ speedup over multiphase VOF CFD).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/centrifugal-pump-cavitation-fno/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 13. [thermoacoustic-instability-helmholtz-pinn](https://github.com/mohammedbasra-star/thermoacoustic-instability-helmholtz-pinn)
+**Combustion Humming, Flame-Acoustic Coupling, and Rayleigh Criterion with Complex-Valued PINNs**
+- Inhomogeneous Helmholtz wave equation with $n$-$\tau$ flame transfer function (FTF) predicting complex resonant acoustic eigenfrequencies $\omega = \omega_r + i \sigma$.
+- Dual-head Complex-PINN solving real and imaginary acoustic pressure mode shapes $\text{Re}(\hat{p}), \text{Im}(\hat{p})$ in gas turbine can-annular combustors ($0.003\%$ frequency discrepancy vs analytical acoustic theory).
+- Rayleigh criterion energy budget evaluation mapping driving vs damping zones and establishing neutral stability boundaries ($\sigma = 0$) in $(n_f, \tau)$ parameter space.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/thermoacoustic-instability-helmholtz-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
 ---
 
 ## 🛠️ Technical Competencies & Tooling
@@ -133,10 +149,10 @@ flowchart TD
 
 | Domain | Core Frameworks & Libraries |
 |:---|:---|
-| **Scientific Machine Learning (SciML)** | `PyTorch 2.x`, `Physics-Informed Neural Networks (PINNs)`, `Neural ODEs`, `Autograd` |
+| **Scientific Machine Learning (SciML)** | `PyTorch 2.x`, `Fourier Neural Operators (FNO)`, `Complex-PINNs`, `Neural ODEs`, `Autograd` |
 | **Statistical ML & Prognostics** | `Scikit-Learn`, `XGBoost`, `Pandas`, `NumPy`, `Bidirectional LSTM`, `Temporal Attention` |
 | **Numerical Methods & Simulation** | `SciPy (solve_ivp, RK45)`, `Finite Difference Methods (Upwind, Crank-Nicolson)` |
-| **Thermodynamics & Turbomachinery** | Brayton Cycle Derating, Jeffcott Rotordynamics, Hydrodynamic Bearings, NASA C-MAPSS |
+| **Thermodynamics & Turbomachinery** | Brayton Cycle Derating, Centrifugal Pump Cavitation, Combustor Acoustics, Rotordynamics |
 | **Data Visualization & Publishing** | `Matplotlib`, `Seaborn`, `Publication 300 DPI Graphics`, `LaTeX (KaTeX)` |
 
 </div>
@@ -162,6 +178,8 @@ flowchart TD
 │  basra-extreme-heat-turbine-derating-ml│ R² Score = 0.9982   │  8,760h Basra Climate    │
 │  iraqi-dust-storm-blade-erosion-pinn │  Erosion MSE = 4.1e-4│  Tabakoff & Shamal Dust  │
 │  iraqi-desert-solar-pv-dust-thermal-ml│ R² Score = 0.9982   │  Ar-Ratawi 1 GW Desert PV│
+│  centrifugal-pump-cavitation-fno     │  Rel L2 = 5.75%      │  Multiphase VOF Solver   │
+│  thermoacoustic-instability-helmholtz│  Freq Err = 0.003%   │  Acoustic Resonant Theory│
 └──────────────────────────────────────┴──────────────────────┴──────────────────────────┘
 ```
 
