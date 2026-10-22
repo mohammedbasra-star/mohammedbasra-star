@@ -52,11 +52,11 @@ flowchart TD
 ## 📂 Featured Research Repositories
 
 ### 1. [pinn-thermo-dynamics](https://github.com/mohammedbasra-star/pinn-thermo-dynamics)
-**Physics-Informed Neural Network (PINN) for High-Temperature Turbomachinery Heat Transfer**
-- Solves 2D nonlinear unsteady thermal conduction governed by $\rho c_p \frac{\partial T}{\partial t} = \nabla \cdot (k \nabla T) + Q$.
-- Validated against $256 \times 256$ analytical and Crank-Nicolson numerical ground truth ($L_2 \text{ error} \approx 1.15 \times 10^{-4}$).
-- Inverse parameter discovery of unknown thermal diffusivity $\alpha$ with $< 0.35\%$ error.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/pinn-thermo-dynamics/blob/main/notebooks/quickstart.ipynb)
+**Physics-Informed Neural Networks (PINNs): Turbomachinery Heat Transfer & Pure PyTorch 2.x Benchmark Suite**
+- Modernizes foundational SciML benchmarks (Burgers, Schrödinger, Navier-Stokes) with dual-stage Adam $\to$ L-BFGS Strong-Wolfe optimization and exact hard boundary ansatz.
+- Solves 2D unsteady thermal conduction in turbine superalloys ($\rho c_p \frac{\partial T}{\partial t} = \nabla \cdot (k \nabla T) + Q$) validated against a $256 \times 256$ Crank-Nicolson numerical ground truth.
+- Inverse parameter discovery of unknown thermal diffusivity $\alpha$ with $< 0.35\%$ error ($L_2 \text{ error} \approx 9.42 \times 10^{-4}$).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/pinn-thermo-dynamics/blob/main/notebooks/burgers_quickstart.ipynb)
 
 ### 2. [pinn-reservoir-dynamics](https://github.com/mohammedbasra-star/pinn-reservoir-dynamics)
 **Physics-Informed Neural Network for Two-Phase Porous Media Flow & Buckley-Leverett Shock Waves**
