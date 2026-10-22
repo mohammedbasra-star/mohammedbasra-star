@@ -39,9 +39,12 @@ flowchart TD
         CAP5["<b>Conjugate Heat Transfer XPINN</b><br/>Blade Cooling & Multi-Domain CHT<br/><i>(Dual Subnet / Interface Jump)</i>"]
         CAP6["<b>Pump Cavitation FNO</b><br/>Rayleigh-Plesset Bubble Inception<br/><i>(Multiphase Spectral Operator)</i>"]
         CAP7["<b>Thermoacoustic PINN</b><br/>Combustion Humming & Rayleigh Criterion<br/><i>(Complex Helmholtz Eigenmodes)</i>"]
+        CAP8["<b>Wet Steam Erosion PINN</b><br/>Wilson Line Droplet Impingement<br/><i>(Al-Hartha 200 MW LP Turbine)</i>"]
+        CAP9["<b>Wet Gas Compressor DeepONet</b><br/>Two-Phase Surge Inception<br/><i>(BGC NGL Moore-Greitzer Operator)</i>"]
+        CAP10["<b>Turbine Exhaust TEG PINN</b><br/>Waste Heat Recovery (>540°C)<br/><i>(Coupled Electro-Thermal & MPPT)</i>"]
     end
 
-    S1 --> S2 --> S3 --> CAP1 & CAP2 & CAP3 & CAP4 & CAP5 & CAP6 & CAP7
+    S1 --> S2 --> S3 --> CAP1 & CAP2 & CAP3 & CAP4 & CAP5 & CAP6 & CAP7 & CAP8 & CAP9 & CAP10
 ```
 
 ---
@@ -165,6 +168,24 @@ flowchart TD
 - Evaluates thermal insulation degradation (superalloy overheating $+50^\circ\text{C}$) and strain energy release rate $G \ge G_c \approx 40\text{ J/m}^2$ spallation delamination criteria.
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-sand-cmas-blade-tbc-pinn/blob/main/notebooks/quickstart_demo.ipynb)
 
+### 18. [wet-steam-turbine-blade-erosion-pinn](https://github.com/mohammedbasra-star/wet-steam-turbine-blade-erosion-pinn)
+**Wilson Line Spontaneous Nucleation & Supersonic Liquid Droplet Impingement Erosion with Multiphase PINNs**
+- Models non-equilibrium homogeneous nucleation ($J_{\text{nuc}} \sim 10^{22}\,\text{m}^{-3}\text{s}^{-1}$) and Gyarmathy droplet growth in Al-Hartha 200 MW LP steam turbine last-stage blades (L-0 / L-1).
+- Coupled Multiphase PINN predicting subcooled supersaturation ratio $S$, wetness fraction $Y_{\text{wet}}$, and Springer liquid impingement erosion mass loss ($R^2 > 0.998$).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/wet-steam-turbine-blade-erosion-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 19. [basra-wet-gas-compressor-surge-deeponet](https://github.com/mohammedbasra-star/basra-wet-gas-compressor-surge-deeponet)
+**Two-Phase Wet Gas Centrifugal Compressor Rotating Stall & Surge Inception with Deep Operator Networks (DeepONet)**
+- Formulates acoustic deceleration ($a_m < 220\,\text{m/s}$) and Greitzer $B$ parameter inflation under variable Liquid Mass Fraction (LMF) in Basra Gas Company (BGC) NGL compressors.
+- Multi-output DeepONet learning the continuous solution operator from discrete throttle valve actuation profiles to dynamic state trajectories $[\Phi(t), \Psi(t), A_{\text{stall}}(t)]$ in $< 0.02\,\text{ms}$ ($> 300\times$ speedup).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/basra-wet-gas-compressor-surge-deeponet/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 20. [turbine-exhaust-thermoelectric-pinn](https://github.com/mohammedbasra-star/turbine-exhaust-thermoelectric-pinn)
+**Coupled Electro-Thermal Waste Heat Recovery from Gas Turbine Exhaust (>540°C) in Desert Oilfields with PINNs**
+- Coupled Seebeck voltage generation, Fourier conduction, Joule self-heating, and Thomson heat redistribution for high-temperature Skutterudites ($\text{CoSb}_3$) with pin-fin desert convective cooling.
+- Multi-physics PINN achieving $R^2 = 0.9988$ on electric potential and determining Maximum Power Point Tracking (MPPT) power ($P_{\text{max}} = 3.48\,\text{mW}$ per leg couple, $\sim 3\,\text{W}$ per compact module).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbine-exhaust-thermoelectric-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
 ---
 
 ## 🛠️ Technical Competencies & Tooling
@@ -208,6 +229,9 @@ flowchart TD
 │  iraqi-ccgt-hrsg-creep-pinn          │  Hoop RMSE = 0.95%   │  Lamé & ASME Damage Rule │
 │  basra-turbine-inlet-cooling-pinn    │  Power RMSE < 0.28 MW│  Psychrometric Rigorous  │
 │  iraqi-sand-cmas-blade-tbc-pinn      │  Penetration < 0.4%  │  Lucas-Washburn Physics  │
+│  wet-steam-turbine-blade-erosion-pinn│  R² Score = 0.9982   │  Wilson Line & Springer  │
+│  basra-wet-gas-compressor-surge-deeponet│ Speedup = 320x    │  Moore-Greitzer RK45     │
+│  turbine-exhaust-thermoelectric-pinn │  V(y) R² = 0.9988    │  Coupled Seebeck-Fourier │
 └──────────────────────────────────────┴──────────────────────┴──────────────────────────┘
 ```
 
