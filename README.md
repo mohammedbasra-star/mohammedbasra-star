@@ -83,26 +83,26 @@ flowchart TD
 - Tuned XGBoost achieved **$R^2 = 0.9610$** and **$\text{RMSE} = 3.364\text{ MW}$** ($0.56\%$ MAPE).
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-ambient-effects-regression-/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 6. [turbine-blade-aerodynamics-fno](https://github.com/mohammedbasra-star/turbine-blade-aerodynamics-fno)
+### 6. [turbine-blade-aerodynamics-fno-](https://github.com/mohammedbasra-star/turbine-blade-aerodynamics-fno-)
 **Turbine Blade Aerodynamics with 2D Fourier Neural Operators (FNO)**
 - Continuous operator mapping ($\mathcal{G}_\theta : \mathcal{A} \to \mathcal{U}$) from blade geometry SDF and freestream Mach $M_\infty$ to complete velocity $(u, v)$ and pressure $C_p$ fields.
 - 4-layer 2D Spectral Convolution kernel operating directly in frequency domain (`torch.fft.rfft2`).
 - Real-time surrogate inference ($< 4\text{ ms}$) achieving **$50,000\times$ speedup** over classical compressible CFD solvers.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbine-blade-aerodynamics-fno/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbine-blade-aerodynamics-fno-/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 7. [gas-turbine-combustion-kinetics-node](https://github.com/mohammedbasra-star/gas-turbine-combustion-kinetics-node)
+### 7. [gas-turbine-combustion-kinetics-node-](https://github.com/mohammedbasra-star/gas-turbine-combustion-kinetics-node-)
 **Gas Turbine Combustion Kinetics & Thermal NOx with Stiff Neural ODEs**
 - Stiff ODE modeling of multi-step Arrhenius chemical kinetics and autoignition thermal runaway across $P \in [10, 25]\text{ bar}$.
 - Resolves extreme chemical stiffness ($\text{ratio } > 10^5$) and predicts thermal $NO_x$ formation via the extended Zeldovich mechanism.
 - Physical element conservation (C, H, O, N) and total mass fraction constraint ($\sum Y_k = 1.0$) embedded in loss formulation.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-combustion-kinetics-node/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-combustion-kinetics-node-/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 8. [heat-exchanger-conjugate-xpinn](https://github.com/mohammedbasra-star/heat-exchanger-conjugate-xpinn)
+### 8. [heat-exchanger-conjugate-xpinn-](https://github.com/mohammedbasra-star/heat-exchanger-conjugate-xpinn-)
 **Conjugate Heat Transfer (CHT) with Extended PINNs (XPINNs)**
 - Multi-domain physics modeling coupled solid metal conduction ($\nabla^2 T_s = 0$) and laminar fluid convection ($u \partial_x T_f - \frac{1}{\text{Pe}} \nabla^2 T_f = 0$).
 - Dual-subnet architecture capturing the sharp normal temperature gradient slope jump ($k_s/k_f = 10$) where monolithic PINNs fail.
 - Rigorous verification against Finite Volume ground truth ($> 3\times$ higher accuracy than single-network PINNs).
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/heat-exchanger-conjugate-xpinn/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/heat-exchanger-conjugate-xpinn-/blob/main/notebooks/quickstart_demo.ipynb)
 
 ---
 
