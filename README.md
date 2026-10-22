@@ -26,14 +26,20 @@ My research bridges classical physical principles (Navier-Stokes, Buckley-Levere
 My academic repositories follow a **logically graduated progression** demonstrating continuous mastery from classical statistical thermofluid modeling to cutting-edge Physics-Informed Neural Networks:
 
 ```mermaid
-flowchart LR
+flowchart TD
     S1["<b>Stage 1: Classical ML</b><br/>Gas Turbine Ambient Derating<br/><i>(XGBoost / Compressor Physics)</i>"]
-    S2["<b>Stage 2: Deep Time-Series</b><br/>Turbomachinery Degradation & RUL<br/><i>(Bi-LSTM / NASA C-MAPSS)</i>"]
-    S3["<b>Stage 3: Dynamical Systems</b><br/>Rotor Dynamics & Vibration<br/><i>(SciPy RK45 / Neural ODE)</i>"]
-    CAP1["<b>Capstone 1: Thermal PINN</b><br/>High-Temperature Heat Transfer<br/><i>(Pure PyTorch / Parameter Discovery)</i>"]
-    CAP2["<b>Capstone 2: Reservoir PINN</b><br/>Two-Phase Buckley-Leverett Flow<br/><i>(Welge Shock Waves / Porosity Inversion)</i>"]
+    S2["<b>Stage 2: Deep Time-Series</b><br/>Turbomachinery Degradation & RUL<br/><i>(Bi-LSTM + Attention / C-MAPSS)</i>"]
+    S3["<b>Stage 3: Dynamical Systems</b><br/>Rotor Dynamics & Bearing Instability<br/><i>(SciPy RK45 / Neural ODE)</i>"]
+    
+    subgraph CAP ["<b>Physics-Informed Deep Learning (PINNs & Operator Learning)</b>"]
+        CAP1["<b>Thermal PINN</b><br/>2D High-Temp Conduction<br/><i>(Analytical & FDM Benchmark)</i>"]
+        CAP2["<b>Reservoir PINN</b><br/>Buckley-Leverett Two-Phase Flow<br/><i>(Welge Shock Waves & Inversion)</i>"]
+        CAP3["<b>Aerodynamics FNO</b><br/>Turbine Blade Transonic Flow<br/><i>(Continuous Operator Learning)</i>"]
+        CAP4["<b>Combustion Neural ODE</b><br/>Stiff Chemical Kinetics & NOx<br/><i>(Arrhenius & Radau / BDF)</i>"]
+        CAP5["<b>Conjugate Heat Transfer XPINN</b><br/>Blade Cooling & Multi-Domain CHT<br/><i>(Dual Subnet / Interface Jump)</i>"]
+    end
 
-    S1 --> S2 --> S3 --> CAP1 & CAP2
+    S1 --> S2 --> S3 --> CAP1 & CAP2 & CAP3 & CAP4 & CAP5
 ```
 
 ---
@@ -77,6 +83,27 @@ flowchart LR
 - Tuned XGBoost achieved **$R^2 = 0.9610$** and **$\text{RMSE} = 3.364\text{ MW}$** ($0.56\%$ MAPE).
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-ambient-effects-regression-/blob/main/notebooks/quickstart_demo.ipynb)
 
+### 6. [turbine-blade-aerodynamics-fno](https://github.com/mohammedbasra-star/turbine-blade-aerodynamics-fno)
+**Turbine Blade Aerodynamics with 2D Fourier Neural Operators (FNO)**
+- Continuous operator mapping ($\mathcal{G}_\theta : \mathcal{A} \to \mathcal{U}$) from blade geometry SDF and freestream Mach $M_\infty$ to complete velocity $(u, v)$ and pressure $C_p$ fields.
+- 4-layer 2D Spectral Convolution kernel operating directly in frequency domain (`torch.fft.rfft2`).
+- Real-time surrogate inference ($< 4\text{ ms}$) achieving **$50,000\times$ speedup** over classical compressible CFD solvers.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbine-blade-aerodynamics-fno/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 7. [gas-turbine-combustion-kinetics-node](https://github.com/mohammedbasra-star/gas-turbine-combustion-kinetics-node)
+**Gas Turbine Combustion Kinetics & Thermal NOx with Stiff Neural ODEs**
+- Stiff ODE modeling of multi-step Arrhenius chemical kinetics and autoignition thermal runaway across $P \in [10, 25]\text{ bar}$.
+- Resolves extreme chemical stiffness ($\text{ratio } > 10^5$) and predicts thermal $NO_x$ formation via the extended Zeldovich mechanism.
+- Physical element conservation (C, H, O, N) and total mass fraction constraint ($\sum Y_k = 1.0$) embedded in loss formulation.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/gas-turbine-combustion-kinetics-node/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 8. [heat-exchanger-conjugate-xpinn](https://github.com/mohammedbasra-star/heat-exchanger-conjugate-xpinn)
+**Conjugate Heat Transfer (CHT) with Extended PINNs (XPINNs)**
+- Multi-domain physics modeling coupled solid metal conduction ($\nabla^2 T_s = 0$) and laminar fluid convection ($u \partial_x T_f - \frac{1}{\text{Pe}} \nabla^2 T_f = 0$).
+- Dual-subnet architecture capturing the sharp normal temperature gradient slope jump ($k_s/k_f = 10$) where monolithic PINNs fail.
+- Rigorous verification against Finite Volume ground truth ($> 3\times$ higher accuracy than single-network PINNs).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/heat-exchanger-conjugate-xpinn/blob/main/notebooks/quickstart_demo.ipynb)
+
 ---
 
 ## 🛠️ Technical Competencies & Tooling
@@ -108,6 +135,9 @@ flowchart LR
 │  turbomachinery-rotor-dynamics-ode   │  MSE Loss = 5.50e-10 │  RK45 Numerical Solver   │
 │  turbomachinery-degradation-lstm     │  Test RMSE = 9.76 cy │  NASA C-MAPSS Fleet (100)│
 │  gas-turbine-ambient-effects-regression│ R² Score = 0.9610   │  UCI CCPP (9,568 Points) │
+│  turbine-blade-aerodynamics-fno      │  Speedup = 50,000x   │  Compressible CFD Flow   │
+│  gas-turbine-combustion-kinetics-node│  Stiffness > 10^5    │  Radau / BDF Chemistry   │
+│  heat-exchanger-conjugate-xpinn      │  L2 Error = 1.12e-1  │  FVM Multi-Domain Solver │
 └──────────────────────────────────────┴──────────────────────┴──────────────────────────┘
 ```
 
