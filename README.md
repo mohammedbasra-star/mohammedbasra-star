@@ -104,26 +104,26 @@ flowchart TD
 - Rigorous verification against Finite Volume ground truth ($> 3\times$ higher accuracy than single-network PINNs).
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/heat-exchanger-conjugate-xpinn-/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 9. [basra-extreme-heat-turbine-derating-ml-](https://github.com/mohammedbasra-star/basra-extreme-heat-turbine-derating-ml-)
+### 9. [basra-extreme-heat-turbine-derating-ml--](https://github.com/mohammedbasra-star/basra-extreme-heat-turbine-derating-ml--)
 **Gas Turbine Derating in Extreme Summer Heat (>50°C) — Basra, Southern Iraq**
 - Models compressor air density loss ($\dot{m} = \rho A v$) and Brayton cycle net power collapse under extreme heat ($> 50^\circ\text{C}$) in Shatt Al-Basra / Rumaila.
 - Physics-Guided MLP enforcing thermodynamic monotonicity constraint ($\partial P / \partial T_{amb} \le 0$) on 8,760 hourly Basra meteorological records.
 - Evaluates evaporative fogging inlet air chilling, identifying up to $+14.7\text{ MW}$ power recovery potential.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/basra-extreme-heat-turbine-derating-ml-/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/basra-extreme-heat-turbine-derating-ml--/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 10. [iraqi-dust-storm-blade-erosion-pinn-](https://github.com/mohammedbasra-star/iraqi-dust-storm-blade-erosion-pinn-)
+### 10. [iraqi-dust-storm-blade-erosion-pinn--](https://github.com/mohammedbasra-star/iraqi-dust-storm-blade-erosion-pinn--)
 **Compressor Blade Abrasive Erosion Under Iraqi Summer Dust Storms (Shamal Winds)**
 - Eulerian-Lagrangian drag dynamics and Stokes particle tracking of airborne quartz sand ($d_{mean} \approx 18\mu\text{m}$, Rosin-Rammler spectrum).
 - PINN models particle velocity field $(u_p, v_p)$ and predicts leading-edge metal mass removal via Tabakoff & Grant erosion law.
 - Pinpoints severe erosion concentration zones on compressor blade leading edge and pressure shoulders.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-dust-storm-blade-erosion-pinn-/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-dust-storm-blade-erosion-pinn--/blob/main/notebooks/quickstart_demo.ipynb)
 
-### 11. [iraqi-desert-solar-pv-dust-thermal-ml-](https://github.com/mohammedbasra-star/iraqi-desert-solar-pv-dust-thermal-ml-)
+### 11. [iraqi-desert-solar-pv-dust-thermal-ml--](https://github.com/mohammedbasra-star/iraqi-desert-solar-pv-dust-thermal-ml--)
 **Desert Solar PV Thermal Degradation & Dust Soiling Optimization — Ar-Ratawi, Basra**
 - Coupled thermal-dust modeling for utility-scale desert solar farms: cell overheating beyond $72^\circ\text{C}$ ($\gamma_P \approx -0.38\%/\text{K}$) and optical Beer-Lambert dust attenuation.
 - Physics-guided multi-target ML predicting cell temperature ($R^2 = 0.9999$) and actual generation ($R^2 = 0.9982$).
 - Optimizes automated water-free robotic dry-cleaning schedule, recovering $+\$1.85\text{ Million}$ annually per 100 MW block.
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-desert-solar-pv-dust-thermal-ml-/blob/main/notebooks/quickstart_demo.ipynb)
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-desert-solar-pv-dust-thermal-ml--/blob/main/notebooks/quickstart_demo.ipynb)
 
 ---
 
