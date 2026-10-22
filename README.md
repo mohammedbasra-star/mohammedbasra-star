@@ -141,6 +141,30 @@ flowchart TD
 - Rayleigh criterion energy budget evaluation mapping driving vs damping zones and establishing neutral stability boundaries ($\sigma = 0$) in $(n_f, \tau)$ parameter space.
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/thermoacoustic-instability-helmholtz-pinn/blob/main/notebooks/quickstart_demo.ipynb)
 
+### 14. [iraqi-flare-gas-turbine-combustion-node](https://github.com/mohammedbasra-star/iraqi-flare-gas-turbine-combustion-node)
+**Sour Associated Petroleum Gas (APG) Flare Gas Combustion & Sulfur Oxidation with Stiff Neural ODEs**
+- Multi-species reaction kinetics modeling Rumaila & West Qurna sour flare gas ($CH_4, C_2+, H_2S$ up to $3.5\%$), calculating Methane Number ($MN$) and Wobbe Index ($WI$).
+- Resolves autoignition thermal runaway and sulfur oxidation cascade ($H_2S \to SO_2 \to SO_3$) with embedded element conservation ($\sim 850\times$ speedup over implicit Radau solvers).
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-flare-gas-turbine-combustion-node/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 15. [iraqi-ccgt-hrsg-creep-pinn](https://github.com/mohammedbasra-star/iraqi-ccgt-hrsg-creep-pinn)
+**Combined Cycle HRSG Superheater Tube Creep-Fatigue Damage under Severe Iraqi Peaking with PINNs**
+- Models transient thermal shocks and Lamé mechanical hoop stresses across thick P91 martensitic steel header walls ($t_w = 40\text{ mm}$, $565^\circ\text{C}$, $14.0\text{ MPa}$) in Besmaya and Rumaila CCGT.
+- Multi-physics PINN solving coupled thermal conduction, radial stress equilibrium, and Kachanov-Rabotnov continuum damage accumulation across 6,000 daily peaking start-up cycles.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-ccgt-hrsg-creep-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 16. [basra-turbine-inlet-cooling-pinn](https://github.com/mohammedbasra-star/basra-turbine-inlet-cooling-pinn)
+**Gas Turbine Inlet Air Cooling: Evaporative Fogging vs Mechanical Chillers under Basra Summer**
+- Psychrometric wet-bulb depression ($T_{\text{db}} - T_{\text{wb}}$) modeling at $>50^\circ\text{C}$ ambient temperatures in southern Iraq for GE Frame 9E (125 MW) turbines.
+- Multi-objective Pareto optimization resolving the trade-off between electrical megawatt restoration ($+15.6\text{ MW}$ fogging vs $+28.2\text{ MW}$ chilling) and desalinated RO water consumption.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/basra-turbine-inlet-cooling-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
+### 17. [iraqi-sand-cmas-blade-tbc-pinn](https://github.com/mohammedbasra-star/iraqi-sand-cmas-blade-tbc-pinn)
+**Molten Iraqi Desert Sand (CMAS) Infiltration & TBC Delamination in Gas Turbines with PINNs**
+- Models VFT liquid glass viscosity collapse of Iraqi sand ($>1200^\circ\text{C}$) and capillary Lucas-Washburn penetration through porous columnar 7YSZ thermal barrier coatings.
+- Evaluates thermal insulation degradation (superalloy overheating $+50^\circ\text{C}$) and strain energy release rate $G \ge G_c \approx 40\text{ J/m}^2$ spallation delamination criteria.
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/iraqi-sand-cmas-blade-tbc-pinn/blob/main/notebooks/quickstart_demo.ipynb)
+
 ---
 
 ## 🛠️ Technical Competencies & Tooling
@@ -180,6 +204,10 @@ flowchart TD
 │  iraqi-desert-solar-pv-dust-thermal-ml│ R² Score = 0.9982   │  Ar-Ratawi 1 GW Desert PV│
 │  centrifugal-pump-cavitation-fno     │  Rel L2 = 5.75%      │  Multiphase VOF Solver   │
 │  thermoacoustic-instability-helmholtz│  Freq Err = 0.003%   │  Acoustic Resonant Theory│
+│  iraqi-flare-gas-turbine-combustion  │  Temp RMSE = 18.4 K  │  Radau Stiff Solver      │
+│  iraqi-ccgt-hrsg-creep-pinn          │  Hoop RMSE = 0.95%   │  Lamé & ASME Damage Rule │
+│  basra-turbine-inlet-cooling-pinn    │  Power RMSE < 0.28 MW│  Psychrometric Rigorous  │
+│  iraqi-sand-cmas-blade-tbc-pinn      │  Penetration < 0.4%  │  Lucas-Washburn Physics  │
 └──────────────────────────────────────┴──────────────────────┴──────────────────────────┘
 ```
 
