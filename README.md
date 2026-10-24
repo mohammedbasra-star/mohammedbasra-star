@@ -186,6 +186,14 @@ flowchart TD
 - Multi-physics PINN achieving $R^2 = 0.9988$ on electric potential and determining Maximum Power Point Tracking (MPPT) power ($P_{\text{max}} = 3.48\,\text{mW}$ per leg couple, $\sim 3\,\text{W}$ per compact module).
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mohammedbasra-star/turbine-exhaust-thermoelectric-pinn-/blob/main/notebooks/quickstart_demo.ipynb)
 
+### 21. [game](https://github.com/mohammedbasra-star/game)
+**Turbomachinery Python Games & Interactive Desktop Simulators (Native Tkinter GUI & CLI)**
+- Interactive educational simulation games built in pure Python:
+  1. **Control Room Operator:** Real-time SCADA simulator balancing fuel valve and fogging cooling to meet megawatts without EGT/vibration trip.
+  2. **Diagnostic Detective:** Lab forensic investigation solving emergency plant alarms via FFT vibration spectra and lube oil analysis.
+  3. **CCGT Master:** Thermodynamic optimizer balancing pressure ratio and steam pressure to break the world-record 60% combined-cycle efficiency.
+- Zero external pip dependencies; runs instantly on any machine with built-in Tkinter GUI and one-click `.bat` runners.
+
 ---
 
 ## 🛠️ Technical Competencies & Tooling
